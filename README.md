@@ -1,6 +1,8 @@
 # jquery paginator
 this is a tiny plugin for paginate unordered lists
 
+[Click Here For Quick Demo](http://asil.me/demo/jquery-paginator)
+
 ## example usage
 *the selector must be id*
 
