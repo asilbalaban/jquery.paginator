@@ -4,7 +4,10 @@
     author:     Asil Balaban
     year:       2014
     github:     https://github.com/asilbalaban/jquery-paginator
-
+    todo:
+        multiple usage support
+        add active class to selected page
+        if only one page then not add the pagination
 */
 
 
@@ -37,8 +40,6 @@ $.fn.paginator = function(settings){
                 $mainUl.children('li').show();
                 $mainUl.children('li:lt('+(start)+')').hide();
                 $mainUl.children('li:gt('+(start+(settings.perpage-1))+')').hide();
-
-
             });
         });
 
