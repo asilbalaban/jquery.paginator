@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery paginator</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+        }
+        .top-nav {
+            background: #000;
+            height: 30px;
+        }
+        .top-nav h1 {
+            font-size: 20px;
+            line-height: 30px;
+            margin: 0px;
+            padding: 0px;
+            color: white;
+            float: left;
+        }
+        .top-nav a {
+            float: right;
+            line-height: 30px;
+            text-decoration: none;
+            height: 30px;
+            display: block;
+            background-color: #f2f2f2;
+            color: black;
+            padding: 0px 20px;
+            font-weight: bold;
+        }
+        .center {
+            width: 960px;
+            margin: 0 auto;
+        }
+        .clear {
+            clear: both;
+        }
+    </style>
+
+
+    <link rel="stylesheet" href="css/paginator.css">
+</head>
+<body>
+    <div class="top-nav">
+        <div class="center">
+            <h1>jquery paginator</h1>
+            <a href="http://www.asilbalaban.com">go to blog post</a>
+        </div>
+    </div>
+
+    <div class="center pagination-container">
+        <ul id="pagination">
+            <li>İtem #1</li>
+            <li>İtem #2</li>
+            <li>İtem #3</li>
+            <li>İtem #4</li>
+            <li>İtem #5</li>
+            <li>İtem #6</li>
+            <li>İtem #7</li>
+            <li>İtem #8</li>
+            <li>İtem #9</li>
+            <li>İtem #10</li>
+            <li>İtem #11</li>
+            <li>İtem #12</li>
+            <li>İtem #13</li>
+            <li>İtem #14</li>
+            <li>İtem #15</li>
+            <li>İtem #16</li>
+            <li>İtem #17</li>
+            <li>İtem #18</li>
+            <li>İtem #19</li>
+            <li>İtem #20</li>
+            <li>İtem #21</li>
+            <li>İtem #22</li>
+            <li>İtem #23</li>
+            <li>İtem #24</li>
+            <li>İtem #25</li>
+            <li>İtem #26</li>
+        </ul>
+        <div class="clear"></div>
+    </div>
+
+    <script src="js/jquery-1.11.0.min.js"></script>
+    <script src="js/jquery.paginator.js"></script>
+    <script>
+        $('#pagination').paginator();
+    </script>
+</body>
+</html>
