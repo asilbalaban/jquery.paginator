@@ -1,7 +1,18 @@
 # jquery paginator
-this is a tiny plugin for paginate unordered lists
+#### *this is a tiny plugin for paginate unordered lists*
 
 [Click Here For Quick Demo](http://asil.me/demo/jquery-paginator)
+
+
+## options
+
+| Name | Description | Type | Default |
+|------|-------------|------|---------|
+| `perpage` | how many items will be shown per page. | Integer | 5 |
+| `activeClass` | class name for active page on pagination list. | String | `active` |
+| `addAnyway` | if this option set as true, the pagination list will be added although total number of items is smaller than the number of items per page | Boolean | false |
+
+
 
 ## example usage
 *the selector must be id*
@@ -18,21 +29,6 @@ this is a tiny plugin for paginate unordered lists
         <li>İtem #9</li>
         <li>İtem #10</li>
         <li>İtem #11</li>
-        <li>İtem #12</li>
-        <li>İtem #13</li>
-        <li>İtem #14</li>
-        <li>İtem #15</li>
-        <li>İtem #16</li>
-        <li>İtem #17</li>
-        <li>İtem #18</li>
-        <li>İtem #19</li>
-        <li>İtem #20</li>
-        <li>İtem #21</li>
-        <li>İtem #22</li>
-        <li>İtem #23</li>
-        <li>İtem #24</li>
-        <li>İtem #25</li>
-        <li>İtem #26</li>
     </ul>
     <div class="clear"></div>
 
@@ -41,5 +37,7 @@ this is a tiny plugin for paginate unordered lists
     <script>
         $('#pagination').paginator();
     </script>
+
+## Download
 
 [Download](https://github.com/asilbalaban/jquery-paginator/archive/master.zip) > includes example usage
