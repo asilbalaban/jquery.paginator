@@ -43,9 +43,3 @@ this is a tiny plugin for paginate unordered lists
     </script>
 
 [Download](https://github.com/asilbalaban/jquery-paginator/archive/master.zip) > includes example usage
-
-## todo
-
-multiple usage support
-add active class to selected page
-if only one page then not add the pagination

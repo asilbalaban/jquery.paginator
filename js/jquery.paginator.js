@@ -4,44 +4,62 @@
     author:     Asil Balaban
     year:       2014
     github:     https://github.com/asilbalaban/jquery-paginator
-    todo:
-        multiple usage support
-        add active class to selected page
-        if only one page then not add the pagination
 */
+(function($){
 
+    $.fn.paginator = function(settings){
+        var defaultSettings = {
+                perpage       : 5,
+                activeClass   : 'active',
+                addAnyway     : false
+            };
 
-$.fn.paginator = function(settings){
-    var defaultSettings = {
-            perpage   : 5,
-        };
-        var settings = $.extend(defaultSettings, settings);
+            settings = $.extend({}, defaultSettings, settings);
 
-        return this.each(function() {
-            $mainUl = $(this);
-            totalChildren = $mainUl.children('li').size();
-            totalPage = Math.ceil(totalChildren / settings.perpage);
+            this.each(function() {
+                
 
-            $mainUl.children('li:gt('+(settings.perpage-1)+')').hide();
-            $mainUl.after($('<ul />', {
-                'id': $mainUl.attr('id')+'-paginator',
-                'html': function() {
-                    for(i=1; i<=totalPage; i++) {
-                        $(this).append('<li>'+i+'</li>');
+                base = this;
+
+                totalChildren = $('li', base).size();
+                totalPage = Math.ceil(totalChildren / settings.perpage);
+
+                $('li:gt('+(settings.perpage-1)+')', base).hide();
+                $(base).after($('<ul />', {
+                    'html': function() {
+
+                        if (settings.addAnyway == true || totalPage != 1) {
+                            for(i=1; i<=totalPage; i++) {
+                                if (i == 1) {
+                                    $(this).append('<li class="'+settings.activeClass+'">'+i+'</li>');
+                                } else {
+                                    $(this).append('<li>'+i+'</li>');
+                                }
+                            }
+                        }
                     }
-                }
-            }));
+                }).attr('data-paginator', ''));
 
-            $('#'+$mainUl.attr('id')+'-paginator li').click(function(){
-                activePage = $(this).index() + 1;
+                $(base).next('ul[data-paginator]').children('li').click(function(){
+                    $list = $(this).parent().prev('ul');
+                    
+                    activePage = $(this).index() + 1;
+                    start = (settings.perpage * activePage) - settings.perpage;
+                    
+                    $(this).siblings().removeClass(settings.activeClass);
+                    $(this).addClass(settings.activeClass);
 
-                start = (settings.perpage * activePage) - settings.perpage;
+                    $list.children('li', $list).show();
+                    $list.children('li:lt('+(start)+')', $list).hide();
+                    $list.children('li:gt('+(start+(settings.perpage-1))+')', $list).hide();
 
-                $mainUl.children('li').show();
-                $mainUl.children('li:lt('+(start)+')').hide();
-                $mainUl.children('li:gt('+(start+(settings.perpage-1))+')').hide();
+                });
+
+                return this;
             });
-        });
 
 
-}
+    }
+
+
+})(jQuery);

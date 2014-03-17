@@ -2,13 +2,13 @@
     margin-top: 20px;
 }
 
-.pagination-container ul#pagination {
+.pagination-container ul.pagination {
     list-style:none;
     margin: 0;
     padding: 0;
 }
 
-.pagination-container ul#pagination li {
+.pagination-container ul.pagination li {
     width: 100px;
     height: 100px;
     background: #f2f2f2;
@@ -19,13 +19,13 @@
     display: inline-block;
 }
 
-.pagination-container ul#pagination-paginator {
+.pagination-container ul.pagination + ul {
     list-style:none;
     margin: 0;
     padding: 0;
 }
 
-.pagination-container ul#pagination-paginator li {
+.pagination-container ul.pagination + ul li {
     width: 20px;
     height: 25px;
     line-height: 25px;
@@ -35,6 +35,11 @@
     text-align: center;
     display: inline-block;
 }
+.pagination-container ul.pagination + ul li.active {
+    background: #ccc;
+}
+
+
 
 .clear {
     clear: both;
